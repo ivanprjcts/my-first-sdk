@@ -1,8 +1,8 @@
-from sdklib import SdkBase
+from sdklib.http import HttpSdk
 from sdklib.util.parser import safe_add_end_slash, parse_args
 
 
-class FirstSdk(SdkBase):
+class FirstSdk(HttpSdk):
     """
     My First Sdk.
     """
