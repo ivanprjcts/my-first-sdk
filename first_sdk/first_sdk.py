@@ -6,7 +6,7 @@ class FirstSdk(HttpSdk):
     """
     My First Sdk.
     """
-    DEFAULT_HOST = "http://127.0.0.1:8000"
+    DEFAULT_HOST = "http://mockapi.sdklib.org"
 
     API_ITEMS_URL_PATH = "/items/"
 
