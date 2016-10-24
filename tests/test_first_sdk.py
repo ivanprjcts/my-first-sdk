@@ -7,7 +7,7 @@ class TestFirstSdk(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        #  FirstSdk.set_default_proxy("http://localhost:8080")
+        # FirstSdk.set_default_proxy("http://localhost:8080")
         cls.api = FirstSdk()
 
     @classmethod
@@ -26,15 +26,14 @@ class TestFirstSdk(unittest.TestCase):
 
         response = self.api.get_items()
         self.assertEqual(response.status, 200)
-        self.assertIn("results", response.data)
-        self.assertTrue(isinstance(response.data["results"], list))
+        self.assertTrue(isinstance(response.data, list))
 
         response = self.api.get_items(item_id)
         self.assertEqual(response.status, 200)
         self.assertEqual("ItemName", response.data["name"])
         self.assertEqual("Some description", response.data["description"])
 
-        response = self.api.update_item(item_id, "New name")
+        response = self.api.update_item(item_id, "New name", "Some description")
         self.assertEqual(response.status, 200)
         self.assertEqual("New name", response.data["name"])
         self.assertEqual("Some description", response.data["description"])

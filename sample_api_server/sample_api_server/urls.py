@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from sample_app.views import ItemsView, ItemDetailView
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+
+    url(r'^items/$', ItemsView.as_view()),
+    url(r'^items/(?P<pk>[0-9]+)/$', ItemDetailView.as_view()),
 ]

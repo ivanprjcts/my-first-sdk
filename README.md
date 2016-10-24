@@ -4,7 +4,10 @@ My First SDK
 
 ## Requirements
 
-* sdklib 1.0+
+* Install requirements form `requirements.txt` file.
+```
+pip install -r requirements.txt
+```
 
 
 ## Run tests
