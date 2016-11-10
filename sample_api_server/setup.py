@@ -9,10 +9,13 @@ def read_file(filepath):
 
 EXCLUDE_FROM_PACKAGES = []
 
+# Dynamically calculate the version based on django.VERSION.
+version = __import__('sample_api_server').__version__
+
 
 setup(
     name='sample_api_server',
-    version='0.1',
+    version=version,
     description='Sdklib Api Sample',
     author='Ivan Martin',
     author_email='ivanprjcts@gmail.com',
@@ -29,6 +32,5 @@ setup(
     ],
     packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
     py_modules=["manage"],
-    include_package_data=True,
     zip_safe=False
 )
